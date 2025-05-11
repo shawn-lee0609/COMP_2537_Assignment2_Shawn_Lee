@@ -250,7 +250,7 @@ app.post('/signupSubmit', async (req, res) => {
 // The route for admin page.
 app.get('/admin', async (req, res) => {
     if (!req.session.authenticated) {
-        return res.redirect("login");
+        return res.redirect("/login");
     }
     else if (req.session.role === 'admin') {
         const users = await userCollection

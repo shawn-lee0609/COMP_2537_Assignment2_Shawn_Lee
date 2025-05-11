@@ -1,27 +1,22 @@
 <%- include("templates/header") %>
 
-  <body>
-    <div class="container">
-      <h1>Hello, <%= username %>.</h1>
-      <!-- Bootstrap responsive grid. -->
-      <div class="row">
-        <div class="col-sm">
-          <% images.forEach(image=> { %>
-            <img src="/images/<%= image %>" alt="Image" style="max-width:400px;">
-            <% }) %>
-        </div>
-      </div>
-      <br>
-      <button type="button" id="signout" class="btn btn-danger">Sign out</button>
-    </div>
-    <script>
-      const signout = document.getElementById("signout");
+<main class="container my-4">
+  <h1>Hello, <%= username %>.</h1>
 
-      signout.onclick = async () => {
-        await fetch('/logout', { method: 'GET' });
-        window.location.href = '/';
-      };
-    </script>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <% images.forEach(img => { %>
+      <div class="col">
+        <img
+          src="/images/<%= img %>"
+          alt="Image"
+          class="img-fluid rounded"
+          style="object-fit: cover; width:100%; height:200px;"
+        >
+      </div>
+    <% }) %>
+  </div>
+
+  <button id="signout" class="btn btn-danger mt-4">Sign out</button>
+</main>
 
 <%- include("templates/footer") %>
-    
