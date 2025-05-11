@@ -1,0 +1,13 @@
+<%- include("templates/header") %>
+    <div class="container">
+        <% if(type === 1) { %>
+        <span>Invalid email/password combination.</span>
+        <br>
+        <% } else { %>
+        <span>Incorrect password</span>
+        <br>
+        <% } %>
+        <br>
+        <a href="/login" class="badge text-bg-primary text-wrap" style="width: 6rem;">Try again</a>
+    </div>
+    <%- include("templates/footer") %>

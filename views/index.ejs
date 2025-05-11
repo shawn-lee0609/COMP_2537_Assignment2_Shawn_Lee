@@ -1,0 +1,15 @@
+<%- include("templates/header") %>
+  <div class="container">
+    <button type="button" id="signup" class="btn btn-primary">Sign Up</button>
+    <br>
+    <br>
+    <button type="button" id="login" class="btn btn-primary">Log in</button>
+  </div>
+  <script>
+    const signup = document.getElementById("signup");
+    const login = document.getElementById("login");
+
+    signup.onclick = () => window.location.href = '/signup';
+    login.onclick = () => window.location.href = '/login';
+  </script>
+  <%- include("templates/footer") %>

@@ -1,0 +1,31 @@
+<%- include("templates/header") %>
+    <h1>All Users</h1>
+    <table border="1" cellpadding="8">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach(user=> { %>
+          <tr>
+            <td>
+              <%= user.username %>
+            </td>
+            <td>
+              <%= user.role %>
+            </td>
+            <td>
+              <form action="/promote/<%= user.username %>" method="POST" style="display: inline;">
+                <button type="submit" class="btn btn-outline-primary">Promote to Admin</button>
+              </form>
+              <form action="/demote/<%= user.username %>" method="POST" style="display: inline;">
+                <button type="submit" class="btn btn-outline-danger">Demote to User</button>
+              </form>
+            </td>
+          </tr>
+          <% }) %>
+      </tbody>
+    </table>
+  <%- include("templates/footer") %>

@@ -1,0 +1,25 @@
+<%- include("templates/header") %>
+<form action='/signupSubmit' method='post'>
+    <input name='username' type='text' placeholder='name'>
+    <br>
+    <input name='email' type='email' placeholder='email'>
+    <br>
+    <input name='password' type='password' placeholder='password'>
+    <br>
+
+    <!-- role selection -->
+    <div>
+        <label>
+            <input type="radio" name="role" value="user" checked>
+            User
+        </label>
+        <label>
+            <input type="radio" name="role" value="admin">
+            Admin
+        </label>
+    </div>
+    <br>
+
+    <button>Submit</button>
+</form>
+<%- include("templates/footer") %>
