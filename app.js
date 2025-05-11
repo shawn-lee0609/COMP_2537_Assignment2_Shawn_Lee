@@ -393,7 +393,7 @@ app.get('/members', (req, res) => {
 // 404 Page, must be placed at the end of all the routes.
 // but before "app.listen".
 app.get("*", (req, res) => {
-    res.render('404');
+    res.status(404).render('404')
 });
 
 // Start the server
